@@ -69,6 +69,7 @@ plimit=10 # To save time testing
 ## Change the scketch path to choose among all *.sif's files
 scketchPath=/home/roldanbj/Documents/simulations
 midpath=2D/taub_study #SERbig.sif
+gitpath=Friction
 # Compile the userfucntion and solvers
 cd $scketchPath/PROG
 #cd /home/roldanbj/BETTIK/simulations/Cavity/PROG/
@@ -87,9 +88,9 @@ do
 for ((tau= tinit; tau<= tfin ; tau= tau+tstep))
 do
 if [ "$mu" -eq 0 ]; then
-  scketch=$scketchPath/$midpath/cavity2dnomu_def.sif #SERbig.sif
+  scketch=$scketchPath/$gitpath/cavity2dnomu_def.sif #SERbig.sif
 else
-  scketch=$scketchPath/$midpath/coulomb_def.sif
+  scketch=$scketchPath/$gitpath/coulomb_def.sif
 fi
 
 # create the run directory
@@ -120,7 +121,7 @@ meshName="m"$elx"r"$rugosite
 totalmeshName=$WorkPath/"m"$elx"r"$rugosite
 meshBase=mesh_blank
 #scketchMesh=$scketchPath/MESH/$meshName.grd
-scketchMesh=$scketchPath/$midpath/$meshBase.grd
+scketchMesh=$scketchPath/$gitpath/$meshBase.grd
 #cp $scketchMesh $totalmeshName.grd
 
 if [ "$rugosite" -gt 9 ]; then
